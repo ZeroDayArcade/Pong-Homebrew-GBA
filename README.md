@@ -2,9 +2,9 @@
 
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/8e3d83e8-2b41-4725-b507-9a368d5c1c17
 
-This repository provides example code for building pong for the Game Boy Advance (GBA). It is built in such a way that it can be ported to other consoles with few changes. It is not meant to win any prizes or be heavily optimized. Rather, it is made to be simple to understand, and an example game that can be used for learning.
+This repository provides an example of how to build pong for the Game Boy Advance (GBA). It is built in such a way that it can be ported to other consoles with few changes. It is not meant to win any prizes or be heavily optimized. Rather, it is made to be simple to understand, and an example game that can be used for learning.
 
-When building games and programs for new hardware, or using a new language or framework, building a simple game like pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if your just getting into game development in general, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals. Without much code, building pong teaches you about:
+When building games and programs for new hardware, or using a new language or framework, building a simple game like pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if you are just getting into game development, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals. Without much code, building pong teaches you about:
 
 - User Input
 - Rendering Graphics
@@ -17,9 +17,9 @@ When building games and programs for new hardware, or using a new language or fr
 
 If the GBA, game dev, homebrew, or any the items above are new to you, hopefully the code in this repo can help you start to familiarize yourself with them. Other uses for this example game include:
 
-- Practicing ROM Hacking
-- Testing an emulator you're developing
-- Practicing porting a game to other consoles
+- Practicing ROM Hacking with a small game and source code you can check
+- Testing core functionality for a GBA emulator you're developing
+- Practicing porting a game to other consoles with an easy example
 
 Additionally, if you want to learn about more advanced game dev features you can extend the game with your own code to:
 
@@ -60,11 +60,11 @@ You should now have a .gba ROM. At this point you can test it with a GBA emulato
 ![gba-rom-slot-2-ds](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/42d1ac2d-b16b-4a32-a57c-e356bfc00b70)
 *ROM loaded from GBA Flashcart in slot-2 on a Nintendo DS*
 
-Another modern way to play your game is by playing it is with a Retro Gaming Handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
+A modern way to play a game you create (and encourage others to play it), is by running it on a retro emulation handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
 
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/c2c55b5d-b9f9-40e2-a02d-a4987a0146e7
 
-This way people can play your game without a flash cartridge, or the need to jailbreak their main console (if you're building for other consoles that don't use flash carts). If your emulation console supports connecting to a TV via HDMI or wireless, that is also a great option.
+This way people can play your game without a flash cartridge, or the need to jailbreak their console (if you're building homebrew for consoles that require that). If your emulation console supports connecting to a TV via HDMI or wireless, that is also a great option, and allows you to easily play on the big screen.
 
 # More ZDA Code and Resources:
 **Learn Reverse Engineering, Assembly, Code Injection and More:**  
