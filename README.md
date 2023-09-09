@@ -58,7 +58,7 @@ make
 
 You should now have a .gba ROM. At this point you can test it with a GBA emulator such as <a href="https://visualboyadvance.org/">Visual Boy Advance</a>, or test on real hardware with a GBA flashcart:
 
-![gba-homebrew-slot-2-ds](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/868787a5-ce8f-43cc-9932-f2f6d9337dc1)
+![gba-rom-slot-2-ds](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/42d1ac2d-b16b-4a32-a57c-e356bfc00b70)
 *ROM loaded from GBA Flashcart in slot-2 on a Nintendo DS*
 
 Another modern way to play your game is by playing it is with a Retro Gaming Handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
