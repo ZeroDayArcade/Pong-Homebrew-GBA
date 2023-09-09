@@ -1,8 +1,10 @@
 # Building Pong for the GBA
 
+When building games and programs for new hardware, or using a new language or framework, building pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if your just getting into game development in general, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals.
+
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/8e3d83e8-2b41-4725-b507-9a368d5c1c17
 
-When building games and programs for new hardware, or using a new language or framework, building pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if your just getting into game development in general, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals. Without much code, building pong teaches you about:
+Without much code, building pong teaches you about:
 
 - User Input
 - Rendering Graphics
