@@ -39,7 +39,7 @@ With devkitPro installed, you're ready to go.
 
 Clone the project:
 ```
-
+git clone https://github.com/ZeroDayArcade/Pong-Homebrew-GBA
 ```
 
 cd into the project directory:
