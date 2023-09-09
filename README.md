@@ -1,7 +1,5 @@
 # Building Pong for the GBA
 
-https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/3167cfc8-5ce3-4858-94b9-fe5f5419cab5
-
 When building games and programs for new hardware, or using a new language or framework, building pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if your just getting into game development in general, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals. Without much code, building pong teaches you about:
 
 - User Input
@@ -12,6 +10,8 @@ When building games and programs for new hardware, or using a new language or fr
 - Winning and Losing
 - A Computer Player / AI
 - Multiple Game States
+
+https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/f04ae7a7-4ca6-4a88-aa54-b163cf397883
 
 This repository is an example of building pong for gaming hardware, in this case the Game Boy Advance (GBA). It is built in such a way that it can be ported to other consoles with few changes. It is not meant to win any prizes or be heavily optimized. Rather, it is made to be simple to understand, and an example that can be used for learning. You can of course build it out further to build a more feature-rich and entertaining game which would be a good exercise in and of itself.  
 
