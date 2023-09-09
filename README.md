@@ -1,5 +1,7 @@
 # Building Pong for the GBA
 
+https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/8e3d83e8-2b41-4725-b507-9a368d5c1c17
+
 When building games and programs for new hardware, or using a new language or framework, building pong is one of the best ways to familiarize yourself with the platform. For the same reasons, if your just getting into game development in general, or getting into homebrew development for the first time, pong makes an excellent first game to learn the fundamentals. Without much code, building pong teaches you about:
 
 - User Input
@@ -10,8 +12,6 @@ When building games and programs for new hardware, or using a new language or fr
 - Winning and Losing
 - A Computer Player / AI
 - Multiple Game States
-
-https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/f04ae7a7-4ca6-4a88-aa54-b163cf397883
 
 This repository is an example of building pong for gaming hardware, in this case the Game Boy Advance (GBA). It is built in such a way that it can be ported to other consoles with few changes. It is not meant to win any prizes or be heavily optimized. Rather, it is made to be simple to understand, and an example that can be used for learning. You can of course build it out further to build a more feature-rich and entertaining game which would be a good exercise in and of itself.  
 
@@ -27,7 +27,9 @@ Additionally, if you want to learn about more advanced features you can extend t
 - Add a multiplayer mode
 - Use sprites and richer graphics
 - Add more menus and the ability to edit settings
-- Build a 3D version 
+- Build a 3D version
+
+https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/f04ae7a7-4ca6-4a88-aa54-b163cf397883
 
 This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitmap modes). This is one of the simplest modes to work with, but has its limitations. Updating pixels with the CPU is not particularly fast. For more intense graphics for 2d games, using one of the tile modes is *usually* a better choice for the GBA. But bitmap modes do have their place. For simple 2d graphics like in this game, or highly dynamic graphics such as those used in 3d games and semi-3d (raycaster) games, bitmap modes are often needed for software rendering. If you do plan on building a graphically intense game in a bitmap mode, keep in mind you'll have to do a fair amount of optimization to get it to run at a good speed. This certainly can be done, and there are impressive ports to the GBA of Doom, Wolfenstein, and even <a href="https://www.youtube.com/watch?v=_GVSLcqGP7g">Tomb Raider</a> that use bitmap modes. For our purposes mode 3 will be more than sufficient.
 
