@@ -19,6 +19,13 @@ If the GBA, game dev, homebrew, or any the items above are new to you, hopefully
 - Practicing ROM Hacking with a small game and source code you can check
 - Testing core functionality for a GBA emulator you're developing
 - Practicing porting a game to other consoles with an easy example
+  
+<br/>  
+
+https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/d7f318b5-ef18-423a-80fe-4ba3b112af79
+
+
+The game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
 
 Additionally, if you want to learn about more advanced game dev features you can extend the game with your own code to:
 
@@ -26,11 +33,6 @@ Additionally, if you want to learn about more advanced game dev features you can
 - Add a multiplayer mode
 - Add more menus and the ability to edit settings
 - Build a 3D version
-
-https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/d7f318b5-ef18-423a-80fe-4ba3b112af79
-
-
-The game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
 
 This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitmap modes). This is one of the simplest modes to work with, but has its limitations. Updating pixels with the CPU is not particularly fast. For more intense graphics for 2d games, using one of the tile modes is *usually* a better choice for the GBA. But bitmap modes do have their place. For simple 2d graphics like in this game, or highly dynamic graphics such as those used in 3d games and semi-3d (raycaster) games, bitmap modes are often needed for software rendering. If you do plan on building a graphically intense game in a bitmap mode, keep in mind you'll have to do a fair amount of optimization to get it to run at a good speed. This certainly can be done, and there are impressive ports of Doom, Wolfenstein, and even <a href="https://www.youtube.com/watch?v=_GVSLcqGP7g">Tomb Raider</a> to the GBA that use bitmap modes. For our purposes mode 3 will be sufficient.
 
@@ -59,12 +61,12 @@ Build the project:
 make
 ```
 
-You should now have a .gba ROM. At this point you can test it with a GBA emulator such as <a href="https://visualboyadvance.org/">Visual Boy Advance</a>, or test on real hardware with a GBA flashcart:
+You should now have a .gba ROM. At this point you can test it with a GBA emulator such as <a href="https://visualboyadvance.org/">Visual Boy Advance</a>, or test on real hardware with a GBA flashcart on an actual GBA as shown at the top, or using a GBA flashcart with the DS or DS Lite:
 
 ![IMG_4633](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/ca01b158-05c3-4de6-b52d-43bfeffc06d1)
 *ROM loaded from GBA Flashcart in slot-2 on a Nintendo DS*
 
-A modern way to play a homebrew game you create (and encourage others to play it), is by running it on a retro emulation handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
+One modern way to play a homebrew game you create (or encourage others to play it), is by running it on a retro emulation handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
 
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/c2c55b5d-b9f9-40e2-a02d-a4987a0146e7
 
@@ -82,7 +84,7 @@ This way people can play your game without a flash cartridge, or the need to jai
 <a href="https://zerodayarcade.com/tutorials/anbernic-rg353-quake-multiplayer">Tutorial - Crossplay Quake on Anbernic RG353PS vs PC</a>  
 <a href="https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool">Hacking WiFi Networks with the Anbernic Handhelds</a>
 
-**WiFi Penetration Testing:**  
+**Penetration Testing:**  
 <a href="https://github.com/ZeroDayArcade/capture-pmkid-wpa-wifi-hacking">Capturing PMKID from WiFi Networks</a>  
 <a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking WiFi Passwords with PMKID</a>  
 <a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
