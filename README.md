@@ -10,10 +10,9 @@ When building games and programs for new hardware, or using a new language or fr
 - Rendering Graphics
 - Collision Detection
 - Designing Game Logic
-- Scoring Points
-- Winning and Losing
-- A Computer Player / AI
-- Multiple Game States
+- Creating a Points System
+- Computer Players / AI
+- Managing Game States
 
 If the GBA, game dev, homebrew, or any the items above are new to you, hopefully the code in this repo can help you start to familiarize yourself with them. Other uses for this example game include:
 
@@ -28,7 +27,10 @@ Additionally, if you want to learn about more advanced game dev features you can
 - Add more menus and the ability to edit settings
 - Build a 3D version
 
-https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/f04ae7a7-4ca6-4a88-aa54-b163cf397883
+https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/d7f318b5-ef18-423a-80fe-4ba3b112af79
+
+
+The game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
 
 This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitmap modes). This is one of the simplest modes to work with, but has its limitations. Updating pixels with the CPU is not particularly fast. For more intense graphics for 2d games, using one of the tile modes is *usually* a better choice for the GBA. But bitmap modes do have their place. For simple 2d graphics like in this game, or highly dynamic graphics such as those used in 3d games and semi-3d (raycaster) games, bitmap modes are often needed for software rendering. If you do plan on building a graphically intense game in a bitmap mode, keep in mind you'll have to do a fair amount of optimization to get it to run at a good speed. This certainly can be done, and there are impressive ports of Doom, Wolfenstein, and even <a href="https://www.youtube.com/watch?v=_GVSLcqGP7g">Tomb Raider</a> to the GBA that use bitmap modes. For our purposes mode 3 will be sufficient.
 
@@ -36,9 +38,11 @@ This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitm
 
 First install devkitPro, see <a href="https://devkitpro.org/wiki/Getting_Started">https://devkitpro.org/wiki/Getting_Started</a>
 
+Make sure to install the GBA tools for devkitPro. If you are on Windows this is usually done with the devkitPro Installer, whereas if you are using macOS and Linux you'd typically use <a href="https://devkitpro.org/wiki/devkitPro_pacman#Predefined_Groups">devkitPro Pacman on the command line</a>. See the link above for details.
+
 If you need any help getting a homebrew dev environment setup, see my guides for <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-mac">macOS</a>, <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-windows">Windows</a>, or <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-linux">Linux</a>. 
 
-With devkitPro installed, you're ready to go.
+With devkitPro and the GBA tools installed, you're ready to go.
 
 Clone the project:
 ```
@@ -57,24 +61,20 @@ make
 
 You should now have a .gba ROM. At this point you can test it with a GBA emulator such as <a href="https://visualboyadvance.org/">Visual Boy Advance</a>, or test on real hardware with a GBA flashcart:
 
-![gba-rom-slot-2-ds](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/42d1ac2d-b16b-4a32-a57c-e356bfc00b70)
+![IMG_4633](https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/ca01b158-05c3-4de6-b52d-43bfeffc06d1)
 *ROM loaded from GBA Flashcart in slot-2 on a Nintendo DS*
 
-A modern way to play a game you create (and encourage others to play it), is by running it on a retro emulation handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
+A modern way to play a homebrew game you create (and encourage others to play it), is by running it on a retro emulation handheld. Any handheld with a GBA emulator should do. Here's an example on an Anbernic RG353PS:
 
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/c2c55b5d-b9f9-40e2-a02d-a4987a0146e7
 
 This way people can play your game without a flash cartridge, or the need to jailbreak their console (if you're building homebrew for consoles that require that). If your emulation console supports connecting to a TV via HDMI or wireless, that is also a great option, and allows you to easily play on the big screen.
 
 # More ZDA Code and Resources:
-**Learn Reverse Engineering, Assembly, Code Injection and More:**  
-🎓  <a href="https://zerodayarcade.com/tutorials">zerodayarcade.com/tutorials</a> 
+### *Interested in gaming, hacking, and homebrew?*
 
-**Learn About Hacking:**  
-<a href="https://github.com/ZeroDayArcade/capture-pmkid-wpa-wifi-hacking">Capturing PMKID from WiFi Networks</a>  
-<a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking WiFi Passwords with PMKID</a>  
-<a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
-<a href="https://github.com/ZeroDayArcade/cracking-wpa-with-handshake">Cracking WPA/WPA2 Passwords with 4-Way Handshake</a>  
+**Learn Reverse Engineering, Assembly, Code Injection and More:**  
+🎓  <a href="https://zerodayarcade.com/tutorials">zerodayarcade.com/tutorials</a>  
 
 **More Retro Gaming Handhelds:**  
 <a href="https://www.youtube.com/shorts/auvxesBrZwU">Connecting a Game Boy Advance SP to the Internet</a>  
@@ -82,7 +82,13 @@ This way people can play your game without a flash cartridge, or the need to jai
 <a href="https://zerodayarcade.com/tutorials/anbernic-rg353-quake-multiplayer">Tutorial - Crossplay Quake on Anbernic RG353PS vs PC</a>  
 <a href="https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool">Hacking WiFi Networks with the Anbernic Handhelds</a>
 
-# Find Homebrew Bounties in Gaming:
+**WiFi Penetration Testing:**  
+<a href="https://github.com/ZeroDayArcade/capture-pmkid-wpa-wifi-hacking">Capturing PMKID from WiFi Networks</a>  
+<a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking WiFi Passwords with PMKID</a>  
+<a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
+<a href="https://github.com/ZeroDayArcade/cracking-wpa-with-handshake">Cracking WPA/WPA2 Passwords with 4-Way Handshake</a> 
+
+# Find Homebrew & Hacking Bounties:
 🎮  <a href="https://zerodayarcade.com/bounties">zerodayarcade.com/bounties</a>
 
 <a href="https://zerodayarcade.com/bounties/ps-vita">PS Vita Bounties</a>  
