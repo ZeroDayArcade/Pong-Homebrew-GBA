@@ -24,9 +24,13 @@
 #define WINNING_SCORE    10
 
 /* Show menu cursor on current selection */
-void showMenuSelection(int selection) {
-    printChar(selector[0], MENU_TEXT_X-CHAR_PIX_SIZE, MENU_ITEM_1);
-    printChar(selector[0], MENU_TEXT_X-CHAR_PIX_SIZE, MENU_ITEM_2);
+void setMenuCursor(int selection) {
+
+    /* Clear Cursor */
+    clearRegion(MENU_TEXT_X-CHAR_PIX_SIZE, MENU_ITEM_1,
+                MENU_TEXT_X, MENU_ITEM_2+CHAR_PIX_SIZE);
+                
+    /* Show Cursor on selection */
     printChar(selector[1], MENU_TEXT_X-CHAR_PIX_SIZE, MENU_ITEM_1+
                                           (selection)*LINE_HEIGHT);
 }
@@ -42,42 +46,42 @@ void menuMode(bool *menuVisible, struct MenuScreen *mainMenu,
             displayText("PONG BREW ", MENU_TEXT_X,   MENU_TEXT_Y);
             displayText("PLAY GAME ", MENU_TEXT_X,   MENU_ITEM_1);
             displayText(" SETTINGS ", MENU_TEXT_X-4, MENU_ITEM_2);
-            showMenuSelection(mainMenu->selection);
+            setMenuCursor(mainMenu->selection);
             
         } else if (*currentMenu == SETTINGS_MENU) {
             displayText("1ST TO 10 ", MENU_TEXT_X,   MENU_TEXT_Y);
             displayText("WINS GAME!", MENU_TEXT_X,   MENU_TEXT_Y+LINE_HEIGHT);
             displayText("   BACK   ", MENU_TEXT_X,   MENU_ITEM_2);
-            showMenuSelection(settingsMenu->selection);
+            setMenuCursor(settingsMenu->selection);
         }
-        
         *menuVisible = true;
+    } 
 
-    /* Otherwise respond to input / menu selections */
-    } else {
-        int keys_pressed;
-        keys_pressed = keysDown();
+    /* Respond to Input / Menu Selections */
+    int keys_pressed;
+    keys_pressed = keysDown();
+    bool selectionMade    = (keys_pressed & KEY_START) || (keys_pressed & KEY_A );
+    bool changedSelection = (keys_pressed & KEY_DOWN)  || (keys_pressed & KEY_UP);
 
-        if ( (keys_pressed & KEY_START) || (keys_pressed & KEY_A) ) {
-            if (*currentMenu == MAIN_MENU) {
-                if (mainMenu->selection == 0) {
-                    clearMenu();
-                    *gameMode = MATCH_MODE;
-                } else if (mainMenu->selection == 1) {
-                    clearMenu();
-                    *currentMenu = SETTINGS_MENU;
-                    *menuVisible = false;
-                }
-            } else if (*currentMenu == SETTINGS_MENU) {
+    if (*currentMenu == MAIN_MENU) {
+        if (selectionMade) {
+            if (mainMenu->selection == 0) {
                 clearMenu();
-                *currentMenu = MAIN_MENU;
+                *gameMode = MATCH_MODE;
+            } else if (mainMenu->selection == 1) {
+                clearMenu();
+                *currentMenu = SETTINGS_MENU;
                 *menuVisible = false;
             }
-        } else if ( (keys_pressed & KEY_DOWN) || (keys_pressed & KEY_UP) ) {
-            if (*currentMenu == MAIN_MENU) {
-                mainMenu->selection = !(mainMenu->selection);
-                showMenuSelection(mainMenu->selection);
-            } 
+        } else if (changedSelection) {
+            mainMenu->selection = !(mainMenu->selection);
+            setMenuCursor(mainMenu->selection);
+        }
+    } else if (*currentMenu == SETTINGS_MENU) {
+        if (selectionMade) {
+            clearMenu();
+            *currentMenu = MAIN_MENU;
+            *menuVisible = false;
         }
     }
     return;
@@ -164,10 +168,10 @@ void playerScores(bool isHuman, struct rect *ball, int *humanScore,
             SCREEN_WIDTH/2+2, MENU_TEXT_Y+30);
         if (isHuman) {
             displayText(" YOU WIN! ", 	
-                MENU_TEXT_X, MENU_TEXT_Y+LINE_HEIGHT);
+                END_TEXT_X, END_TEXT_Y);
         } else {
             displayText(" CPU WINS ", 	
-                MENU_TEXT_X, MENU_TEXT_Y+LINE_HEIGHT);
+                END_TEXT_X, END_TEXT_Y);
         }
         *gameMode = RESET_MODE;
         
