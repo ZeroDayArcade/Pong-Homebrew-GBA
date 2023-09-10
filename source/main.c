@@ -262,11 +262,18 @@ void matchMode(struct rect *humanPlayer, struct rect *computerPlayer,
         }
     }
 
-    /* Draw Scores, Players, Ball at current positions */
+    /* Clear Previous Ball, Player Graphics */
+    clearPrevious(ball);
+    clearPrevious(humanPlayer);
+    clearPrevious(computerPlayer);
+
+    /* Draw Static Elements */
     if (*gameMode != RESET_MODE) drawCenterLine();
     printHumanScore(score[*humanScore]);
     printComputerScore(score[*computerScore]);
     printPlayerSymbols();
+
+    /* Draw Ball, Players at current positions */
     drawRect(ball, CLR_LIME);
     drawRect(humanPlayer, CLR_BLUE);
     drawRect(computerPlayer, CLR_BLUE);
@@ -323,12 +330,8 @@ int main(void) {
 
     /* Menu Variables */
     struct MenuScreen mainMenu, settingsMenu;
-    mainMenu.numOptions = 2;
     mainMenu.selection = 0;
-    
-    settingsMenu.numOptions = 1;
     settingsMenu.selection = 1;
-
     bool menuVisible = false;
     int currentMenu = MAIN_MENU;
 

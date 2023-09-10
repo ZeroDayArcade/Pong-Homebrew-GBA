@@ -40,20 +40,11 @@ struct rect {
 }; 
 
 struct MenuScreen {
-    int numOptions;
     int selection;
 };
 
 /* Drawing Graphics for Players and Ball */
-void clearRect(struct rect *cRect) {
-    for (int i = cRect->prevX; i < cRect->prevX + cRect->width; i++) {
-        for (int j = cRect->prevY; j < cRect->prevY + cRect->height; j++) {
-            m3_mem[j][i]= CLR_BLACK;
-        }
-    }
-}
-
-void renderRect(struct rect *cRect, int color) {
+void drawRect(struct rect *cRect, int color) {
     for (int i = cRect->x; i < cRect->x + cRect->width; i++) {
         for (int j = cRect->y; j < cRect->y + cRect->height; j++) {
             m3_mem[j][i]= color;
@@ -61,16 +52,19 @@ void renderRect(struct rect *cRect, int color) {
     }
 }
 
-void drawRect(struct rect *cRect, int color) {
-    clearRect(cRect);           // Clear Previous
-    renderRect(cRect, color);   // Draw New
+void clearPrevious(struct rect *cRect) {
+    for (int i = cRect->prevX; i < cRect->prevX + cRect->width; i++) {
+        for (int j = cRect->prevY; j < cRect->prevY + cRect->height; j++) {
+            m3_mem[j][i]= CLR_BLACK;
+        }
+    }
 }
 
 /* Clear Generic Rectangular Region */
 void clearRegion(int x1, int y1, int x2, int y2) {
     for (int i=x1; i<x2; i++) {
         for (int j=y1; j<y2; j++) {
-            m3_mem[j][i] = 0x0000;
+            m3_mem[j][i] = CLR_BLACK;
         }
     }
 }
@@ -93,8 +87,8 @@ void drawCenterLine() {
 void printScore(bool scoreArray[64], int x) {
     for (int i=0; i<8; i++) {
         for (int j=0; j<8; j++) {
-            int color = 0x0000;
-            if (scoreArray[i*8+j]) color = 0x7FFF;
+            int color = CLR_BLACK;
+            if (scoreArray[i*8+j]) color = CLR_WHITE;
             m3_mem[SCORE_Y + 2*i][x + 2*j] = color;
             m3_mem[SCORE_Y + 2*i][x + 2*j+1] = color;
             m3_mem[SCORE_Y + 2*i+1][x + 2*j] = color;
@@ -115,16 +109,16 @@ void printComputerScore(bool scoreArray[64]) {
 void printChar(bool characterArray[64], int x, int y) {
     for (int i=0; i<8; i++) {
         for (int j=0; j<8; j++) {
-            int color = 0x0000;
-            if (characterArray[i*8+j]) color = 0x7FFF;
+            int color = CLR_BLACK;
+            if (characterArray[i*8+j]) color = CLR_WHITE;
             m3_mem[y + i][x + j] = color;
         }
     }
 }
 
-/*  Display text string (Only characters.h chars). Only capitol 
-    letters and some punctuation, not full ascii. Limited to 
-    NUM_CHARS_LINE (10) characters.
+/*  Display text string (made of characters.h chars). Only capital
+    letters, numbers, and some punctuation, not full ascii.
+    Limited to NUM_CHARS_LINE characters per line.
 */
 void displayText(char textBuffer[], int x, int y) {
     for (int i=0; i<NUM_CHARS_LINE; i++) {
@@ -173,7 +167,7 @@ void clearMenu() {
 void clearScreen() {
     for (int i=0; i<240; i++) {
         for (int j=0; j<160; j++) {
-            m3_mem[j][i] = 0x0000;
+            m3_mem[j][i] = CLR_BLACK;
         }
     }
 }
