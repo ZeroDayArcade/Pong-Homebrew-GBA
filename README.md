@@ -25,7 +25,7 @@ If the GBA, game dev, homebrew, or any the items above are new to you, hopefully
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/d7f318b5-ef18-423a-80fe-4ba3b112af79
 
 
-The game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
+This game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
 
 Additionally, if you want to learn about more advanced game dev features you can extend the game with your own code to:
 
@@ -40,7 +40,7 @@ This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitm
 
 First install devkitPro, see <a href="https://devkitpro.org/wiki/Getting_Started">https://devkitpro.org/wiki/Getting_Started</a>
 
-Make sure to install the GBA tools for devkitPro. If you are on Windows this is usually done with the devkitPro Installer, whereas if you are using macOS and Linux you'd typically use <a href="https://devkitpro.org/wiki/devkitPro_pacman#Predefined_Groups">devkitPro Pacman on the command line</a>. See the link above for details.
+Make sure to install the GBA tools for devkitPro. If you are on Windows this is usually done with the devkitPro Installer, whereas if you are using macOS or Linux you'd typically use <a href="https://devkitpro.org/wiki/devkitPro_pacman#Predefined_Groups">devkitPro Pacman on the command line</a>. See the link above for details.
 
 If you need any help getting a homebrew dev environment setup, see my guides for <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-mac">macOS</a>, <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-windows">Windows</a>, or <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-linux">Linux</a>. 
 
@@ -82,11 +82,11 @@ This way people can play your game without a flash cartridge, or the need to jai
 <a href="https://www.youtube.com/shorts/auvxesBrZwU">Connecting a Game Boy Advance SP to the Internet</a>  
 <a href="https://www.youtube.com/shorts/94pTU2rXiVE">Multiplayer Quake 1 on a Nintendo DS vs PC Player: Crossplay</a>  
 <a href="https://zerodayarcade.com/tutorials/anbernic-rg353-quake-multiplayer">Tutorial - Crossplay Quake on Anbernic RG353PS vs PC</a>  
-<a href="https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool">Hacking WiFi Networks with the Anbernic Handhelds</a>
+<a href="https://github.com/ZeroDayArcade/RG353-WiFi-Penetration-Tool">WiFi Penetration Testing with Anbernic Handhelds</a>
 
 **Penetration Testing:**  
-<a href="https://github.com/ZeroDayArcade/capture-pmkid-wpa-wifi-hacking">Capturing PMKID from WiFi Networks</a>  
-<a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking WiFi Passwords with PMKID</a>  
+<a href="https://github.com/ZeroDayArcade/capture-pmkid-wpa-wifi-hacking">Capturing PMKID from a Wireless Router</a>  
+<a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking Passwords with PMKID</a>  
 <a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
 <a href="https://github.com/ZeroDayArcade/cracking-wpa-with-handshake">Cracking WPA/WPA2 Passwords with 4-Way Handshake</a> 
 
