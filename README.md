@@ -25,7 +25,7 @@ If the GBA, game dev, homebrew, or any the items above are new to you, hopefully
 https://github.com/ZeroDayArcade/Pong-Homebrew-GBA/assets/141867962/9e19deda-527a-4842-b2d4-d27a90e1a384
 
 
-This game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to chose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
+This game has a *very* simple menu that is primarily included to demonstrate switching between game states in a game loop, and to allow the player to choose when they start a new game. It is not meant to show you how to create a proper menu, but I suppose you could modify the code to handle more menu options and sub menus if you wanted.
 
 Additionally, if you want to learn about more advanced game dev features you can extend the game with your own code to:
 
@@ -42,7 +42,7 @@ First install devkitPro, see <a href="https://devkitpro.org/wiki/Getting_Started
 
 Make sure to install the GBA tools for devkitPro. If you are on Windows this is usually done with the devkitPro Installer, whereas if you are using macOS or Linux you'd typically use <a href="https://devkitpro.org/wiki/devkitPro_pacman#Predefined_Groups">devkitPro Pacman on the command line</a>. See the link above for details.
 
-If you need any help getting a homebrew dev environment setup, see my guides for <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-mac">macOS</a>, <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-windows">Windows</a>, or <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-linux">Linux</a>. 
+If you need any help getting a homebrew dev environment setup, see my guides for <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-mac">macOS</a>, <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-windows">Windows</a>, and <a href="https://zerodayarcade.com/tutorials/setup-nintendo-homebrew-dev-environment-on-linux">Linux</a>. 
 
 With devkitPro and the GBA tools installed, you're ready to go.
 
