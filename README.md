@@ -36,6 +36,8 @@ Additionally, if you want to learn about more advanced game dev features you can
 
 This game uses mode 3, one of the bitmap modes for the GBA (3, 4, and 5 are bitmap modes). This is one of the simplest modes to work with, but has its limitations. Updating pixels with the CPU is not particularly fast. For more intense graphics for 2d games, using one of the tile modes is *usually* a better choice for the GBA. But bitmap modes do have their place. For simple 2d graphics like in this game, or highly dynamic graphics such as those used in 3d games and semi-3d (raycaster) games, bitmap modes are often needed for software rendering. If you do plan on building a graphically intense game in a bitmap mode, keep in mind you'll have to do a fair amount of optimization to get it to run at a good speed. This certainly can be done, and there are impressive ports of Doom, Wolfenstein, and even <a href="https://www.youtube.com/watch?v=_GVSLcqGP7g">Tomb Raider</a> to the GBA that use bitmap modes. For our purposes mode 3 will be sufficient.
 
+You can also watch my ▶️ <a href="https://www.youtube.com/watch?v=nh0B5qBXPmA">video on getting started building pong for the GBA</a> that links to this repo.
+
 ## Getting and building the code
 
 First install devkitPro, see <a href="https://devkitpro.org/wiki/Getting_Started">https://devkitpro.org/wiki/Getting_Started</a>
