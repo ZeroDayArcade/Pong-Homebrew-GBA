@@ -91,17 +91,3 @@ This way people can play your game without a flash cartridge, or the need to jai
 <a href="https://github.com/ZeroDayArcade/wpa-password-cracking-with-pmkid/">Cracking Passwords with PMKID</a>  
 <a href="https://github.com/ZeroDayArcade/capture-handshake-wpa-wifi-hacking">Capturing 4-Way Handshake from WPA/WPA2 Networks</a>  
 <a href="https://github.com/ZeroDayArcade/cracking-wpa-with-handshake">Cracking WPA/WPA2 Passwords with 4-Way Handshake</a> 
-
-# Find Homebrew & Hacking Bounties:
-🎮  <a href="https://zerodayarcade.com/bounties">zerodayarcade.com/bounties</a>
-
-<a href="https://zerodayarcade.com/bounties/ps-vita">PS Vita Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/ps4">PS4 Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/ps5">PS5 Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/gamecube">GameCube Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/3ds">3DS Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/switch">Switch Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/xbox-one">XBox One Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/xbox-series-x-s">XBox Series X|S Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/pc">PC/Mac Bounties</a>  
-<a href="https://zerodayarcade.com/bounties/other">RetroArch Bounties</a>  
