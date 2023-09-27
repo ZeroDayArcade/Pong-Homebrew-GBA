@@ -32,7 +32,7 @@
 *.app
 
 build/
-*.gba
+# *.gba
 *.elf
 
 **/*.DS_Store
