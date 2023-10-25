@@ -50,7 +50,7 @@ With devkitPro and the GBA tools installed, you're ready to go.
 
 Clone the project:
 ```
-git clone https://github.com/ZeroDayArcade/Pong-Homebrew-GBA
+git clone https://github.com/ZeroDayArcade/Pong-Homebrew-GBA.git
 ```
 
 cd into the project directory:
